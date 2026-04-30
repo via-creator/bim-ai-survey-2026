@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 교육·세미나 통합 수요조사 — 충남건축사회 BIM·AI위원회</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500&display=swap');
+
+  :root {
+    --icy-white: #F2F4F7;
+    --ink-black: #1A1A1A;
+    --slate: #2F3E46;
+    --cobalt: #2E5894;
+    --cobalt-light: #e8eef8;
+    --cobalt-mid: #b8ccee;
+    --viridian: #2D6A4F;
+    --viridian-light: #e6f2ec;
+    --viridian-mid: #a8cebb;
+    --gray-mid: #4e6370;
+    --gray-line: #dde3ea;
+    --white: #ffffff;
+    --amber-light: #fdf6e8;
+    --amber-border: #e8c97a;
+    --amber-text: #8a6200;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--icy-white);
+    color: var(--ink-black);
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .page-wrap { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  /* HEADER */
+  .header-band {
+    background: var(--slate);
+    border-radius: 12px 12px 0 0;
+    padding: 32px 36px 28px;
+    color: var(--white);
+  }
+  .header-eyebrow {
+    font-size: 11px; letter-spacing: 0.12em; color: var(--cobalt-mid);
+    font-weight: 400; margin-bottom: 8px; font-family: 'IBM Plex Sans', sans-serif;
+    text-transform: uppercase;
+  }
+  .header-title { font-size: 22px; font-weight: 700; color: var(--white); line-height: 1.35; margin-bottom: 6px; }
+  .header-sub { font-size: 13px; color: #d0dce6; font-weight: 400; }
+  .header-meta { margin-top: 20px; display: flex; gap: 20px; flex-wrap: wrap; }
+  .meta-pill {
+    background: rgba(255,255,255,0.1); border: 0.5px solid rgba(255,255,255,0.2);
+    border-radius: 100px; padding: 4px 14px; font-size: 11.5px; color: #dce8f0;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+
+  /* NOTICE BOXES */
+  .notice-box {
+    background: var(--cobalt-light); border-left: 3px solid var(--cobalt);
+    border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 0;
+    font-size: 13px; color: var(--slate); line-height: 1.65;
+  }
+  .notice-box strong { color: var(--cobalt); }
+  .notice-box.viridian {
+    background: var(--viridian-light); border-left-color: var(--viridian);
+  }
+  .notice-box.viridian strong { color: var(--viridian); }
+  .notice-gap { height: 8px; }
+
+  /* CARD */
+  .card {
+    background: var(--white); border: 0.5px solid var(--gray-line);
+    border-radius: 10px; padding: 28px 32px; margin-bottom: 16px;
+  }
+  .card.viridian-card { border-top: 3px solid var(--viridian); }
+  .card.cobalt-card { border-top: 3px solid var(--cobalt); }
+
+  /* SECTION LABEL */
+  .section-label { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+  .section-num {
+    width: 26px; height: 26px; border-radius: 50%; background: var(--cobalt);
+    color: var(--white); font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'IBM Plex Sans', sans-serif; flex-shrink: 0;
+  }
+  .section-num.viridian { background: var(--viridian); }
+  .section-num.slate { background: var(--slate); }
+  .section-title { font-size: 15px; font-weight: 700; color: var(--slate); letter-spacing: -0.01em; }
+
+  /* SECTION BADGE */
+  .sec-badge {
+    display: inline-block; border-radius: 100px; padding: 3px 12px;
+    font-size: 11.5px; font-weight: 500; margin-left: 8px; vertical-align: middle;
+  }
+  .sec-badge.cobalt { background: var(--cobalt-light); color: var(--cobalt); }
+  .sec-badge.viridian { background: var(--viridian-light); color: var(--viridian); }
+  .sec-badge.slate { background: #e8edf0; color: var(--slate); }
+
+  /* QUESTION */
+  .q-block { margin-bottom: 22px; }
+  .q-block:last-child { margin-bottom: 0; }
+  .q-label { font-size: 13.5px; font-weight: 500; color: var(--ink-black); margin-bottom: 10px; line-height: 1.5; }
+  .q-label .req { color: var(--cobalt); margin-left: 3px; font-size: 12px; }
+  .q-label .req.vir { color: var(--viridian); }
+  .q-hint { font-size: 12.5px; color: var(--gray-mid); margin-bottom: 8px; font-weight: 400; }
+
+  /* RADIO / CHECKBOX */
+  .opt-grid { display: grid; gap: 7px; }
+  .opt-grid.col2 { grid-template-columns: 1fr 1fr; }
+  .opt-item {
+    display: flex; align-items: flex-start; gap: 9px; cursor: pointer;
+    padding: 9px 12px; border-radius: 7px; border: 0.5px solid var(--gray-line);
+    background: var(--icy-white); transition: background 0.15s, border-color 0.15s;
+  }
+  .opt-item:hover { border-color: var(--cobalt-mid); background: var(--cobalt-light); }
+  .opt-item.v:hover { border-color: var(--viridian-mid); background: var(--viridian-light); }
+  .opt-item input[type="radio"], .opt-item input[type="checkbox"] {
+    accent-color: var(--cobalt); width: 15px; height: 15px;
+    flex-shrink: 0; margin-top: 2px; cursor: pointer;
+  }
+  .opt-item.v input { accent-color: var(--viridian); }
+  .opt-item.selected { background: var(--cobalt-light); border-color: var(--cobalt); }
+  .opt-item.v.selected { background: var(--viridian-light); border-color: var(--viridian); }
+  .opt-text { font-size: 13px; color: var(--ink-black); line-height: 1.5; }
+  .opt-sub { font-size: 12.5px; color: var(--gray-mid); display: block; margin-top: 2px; }
+
+  /* LEVEL BAR */
+  .level-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+  .level-item { text-align: center; cursor: pointer; }
+  .level-item input { display: none; }
+  .level-box {
+    border: 0.5px solid var(--gray-line); border-radius: 7px;
+    padding: 10px 6px 8px; background: var(--icy-white); transition: all 0.15s;
+  }
+  .level-box .lv-num {
+    font-size: 18px; font-weight: 700; color: var(--gray-mid);
+    font-family: 'IBM Plex Sans', sans-serif; display: block; margin-bottom: 4px; line-height: 1;
+  }
+  .level-box .lv-label { font-size: 12px; color: var(--gray-mid); display: block; line-height: 1.3; }
+  .level-item input:checked + .level-box { background: var(--cobalt-light); border-color: var(--cobalt); }
+  .level-item input:checked + .level-box .lv-num,
+  .level-item input:checked + .level-box .lv-label { color: var(--cobalt); }
+  .level-item:hover .level-box { border-color: var(--cobalt-mid); }
+
+  /* TEXTAREA */
+  .q-textarea {
+    width: 100%; min-height: 80px; border: 0.5px solid var(--gray-line);
+    border-radius: 7px; padding: 10px 13px; font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px; color: var(--ink-black); background: var(--icy-white);
+    resize: vertical; outline: none; transition: border-color 0.15s; line-height: 1.6;
+  }
+  .q-textarea:focus { border-color: var(--cobalt); background: var(--white); }
+  .q-textarea.v:focus { border-color: var(--viridian); }
+
+  /* DIVIDER */
+  .q-divider { border: none; border-top: 0.5px solid var(--gray-line); margin: 20px 0; }
+
+  /* INLINE NOTICE TABLE */
+  .notice-inline {
+    background: var(--icy-white); border: 0.5px solid var(--gray-line);
+    border-radius: 8px; overflow: hidden; margin-bottom: 8px;
+  }
+  .notice-inline.deposit { background: var(--amber-light); border-color: var(--amber-border); }
+  .notice-inline.viridian { background: var(--viridian-light); border-color: var(--viridian-mid); }
+  .notice-row {
+    display: flex; align-items: baseline; gap: 12px;
+    padding: 10px 14px; border-bottom: 0.5px solid var(--gray-line);
+  }
+  .notice-inline.deposit .notice-row { border-bottom-color: var(--amber-border); }
+  .notice-inline.viridian .notice-row { border-bottom-color: var(--viridian-mid); }
+  .notice-row:last-child { border-bottom: none; }
+  .notice-key {
+    font-size: 12px; font-weight: 500; color: var(--cobalt); white-space: nowrap;
+    min-width: 72px; font-family: 'IBM Plex Sans', sans-serif;
+  }
+  .notice-inline.deposit .notice-key { color: var(--amber-text); }
+  .notice-inline.viridian .notice-key { color: var(--viridian); }
+  .notice-val { font-size: 13px; color: var(--ink-black); line-height: 1.55; }
+  .notice-caption { font-size: 12px; color: var(--gray-mid); margin-top: 6px; }
+
+  /* SUBMIT */
+  .submit-card {
+    background: var(--slate); border-radius: 10px; padding: 28px 32px; margin-bottom: 16px;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  }
+  .submit-msg { color: #b0bec8; font-size: 12.5px; line-height: 1.6; }
+  .submit-msg strong { color: var(--white); font-weight: 500; }
+  .btn-submit {
+    background: var(--cobalt); color: var(--white); border: none; border-radius: 8px;
+    padding: 13px 28px; font-size: 13.5px; font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif; cursor: pointer; transition: background 0.15s; white-space: nowrap;
+  }
+  .btn-submit:hover { background: #1e3f6e; }
+  .btn-print {
+    background: transparent; color: #8a9aab; border: 0.5px solid #4a5e6a;
+    border-radius: 8px; padding: 13px 20px; font-size: 12px;
+    font-family: 'Noto Sans KR', sans-serif; cursor: pointer; transition: all 0.15s; margin-left: 8px;
+  }
+  .btn-print:hover { color: var(--white); border-color: var(--gray-mid); }
+
+  /* FOOTER */
+  .footer-bar {
+    background: var(--white); border: 0.5px solid var(--gray-line); border-radius: 10px;
+    padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+  .footer-id { font-size: 12px; color: var(--gray-mid); font-family: 'IBM Plex Sans', sans-serif; }
+  .footer-copy { font-size: 11px; color: var(--gray-mid); text-align: right; }
+
+  /* SECTION DIVIDER BAND */
+  .sec-band {
+    background: var(--slate); border-radius: 8px; padding: 10px 20px;
+    margin-bottom: 12px; display: flex; align-items: center; gap: 12px;
+  }
+  .sec-band-label { font-size: 12px; color: #8a9aab; font-family: 'IBM Plex Sans', sans-serif; font-weight: 400; }
+  .sec-band-title { font-size: 14px; font-weight: 700; color: var(--white); }
+  .sec-band-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .sec-band-dot.cobalt { background: var(--cobalt-mid); }
+  .sec-band-dot.viridian { background: var(--viridian-mid); }
+
+  /* ID INPUT */
+  .id-input {
+    width: 100%; border: 0.5px solid var(--gray-line); border-radius: 7px;
+    padding: 11px 13px; font-size: 13px; font-family: 'Noto Sans KR', sans-serif;
+    background: var(--icy-white); outline: none; color: var(--ink-black);
+    transition: border-color 0.15s;
+  }
+  .id-input:focus { border-color: var(--slate); background: var(--white); }
+
+  @page {
+    size: A4 portrait;
+    margin: 15mm 12mm 15mm 12mm;
+  }
+
+  @media print {
+    body {
+      background: white;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      font-size: 11px;
+      line-height: 1.55;
+    }
+    .page-wrap {
+      padding: 0;
+      max-width: 100%;
+    }
+
+    /* 화면 전용 요소 숨김 */
+    .btn-submit, .btn-print { display: none; }
+    .submit-card { display: none; }
+
+    /* 헤더 */
+    .header-band { border-radius: 0; }
+    .header-title { font-size: 16px; }
+    .header-sub { font-size: 11px; }
+    .header-eyebrow { font-size: 9px; }
+    .meta-pill { font-size: 9px; padding: 3px 10px; }
+
+    /* 카드 */
+    .card {
+      break-inside: auto;
+      border: 0.5px solid #ccc;
+      padding: 14px 16px;
+      margin-bottom: 8px;
+    }
+
+    /* 섹션 밴드 */
+    .sec-band {
+      break-after: avoid;
+      break-inside: avoid;
+      padding: 7px 14px;
+      margin-bottom: 6px;
+    }
+    .sec-band-title { font-size: 12px; }
+    .sec-band-label { font-size: 9px; }
+
+    /* 질문 블록 */
+    .q-block {
+      break-inside: avoid;
+      margin-bottom: 12px;
+    }
+    .q-label { font-size: 11px; margin-bottom: 6px; }
+    .q-hint { font-size: 10px; margin-bottom: 5px; }
+    .q-divider { margin: 10px 0; }
+
+    /* 선택지 */
+    .opt-item {
+      padding: 5px 8px;
+      font-size: 10.5px;
+    }
+    .opt-text { font-size: 10.5px; }
+    .opt-sub { font-size: 9.5px; }
+    .opt-grid { gap: 4px; }
+
+    /* 레벨 바 */
+    .level-grid { break-inside: avoid; gap: 4px; }
+    .level-box { padding: 6px 4px 5px; }
+    .level-box .lv-num { font-size: 14px; }
+    .level-box .lv-label { font-size: 9px; }
+
+    /* 안내 박스 */
+    .notice-inline { break-inside: avoid; }
+    .notice-box { font-size: 10.5px; padding: 10px 14px; }
+    .notice-row { padding: 7px 12px; }
+    .notice-key { font-size: 10px; min-width: 60px; }
+    .notice-val { font-size: 10.5px; }
+    .notice-caption { font-size: 9.5px; }
+    .notice-gap { height: 3px; }
+
+    /* 입력 필드 */
+    .id-input {
+      border: 0.5px solid #aaa;
+      background: #f8f8f8;
+      padding: 6px 10px;
+      font-size: 11px;
+    }
+    .q-textarea {
+      min-height: 50px;
+      font-size: 11px;
+    }
+
+    /* 배지 */
+    .sec-badge { font-size: 9px; padding: 2px 8px; }
+
+    /* 푸터 */
+    .footer-bar {
+      break-inside: avoid;
+      padding: 10px 16px;
+    }
+    .footer-id { font-size: 9px; }
+    .footer-copy { font-size: 9px; }
+  }
+  /* SUBMISSION STATES */
+  .id-input.field-error,
+  .q-textarea.field-error { border: 2px solid #e53e3e !important; }
+  .q-block.field-error {
+    outline: 2px solid #e53e3e; outline-offset: 4px; border-radius: 8px;
+  }
+  #error-banner {
+    display: none; background: #fff5f5; border: 2px solid #e53e3e;
+    color: #c53030; padding: 14px 18px; border-radius: 8px;
+    margin-bottom: 16px; font-size: 13.5px; font-weight: 500;
+    position: sticky; top: 8px; z-index: 100;
+  }
+  #completion-card {
+    display: none; background: var(--slate); color: var(--white);
+    text-align: center; padding: 64px 32px; border-radius: 10px; margin-bottom: 16px;
+  }
+  #completion-card .done-mark {
+    font-size: 48px; line-height: 1; margin-bottom: 18px; color: #95d5b2;
+  }
+  #completion-card .done-title {
+    font-size: 19px; font-weight: 700; margin-bottom: 14px; color: var(--white);
+  }
+  #completion-card .done-body {
+    font-size: 14px; line-height: 1.85; color: #cfd8dc;
+  }
+  .spinner {
+    display: inline-block; width: 14px; height: 14px;
+    border: 2px solid rgba(255,255,255,0.35); border-top-color: var(--white);
+    border-radius: 50%; animation: spin 0.8s linear infinite;
+    margin-right: 8px; vertical-align: -2px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+
+  @media (max-width: 600px) {
+    /* 페이지 컨테이너 */
+    .page-wrap { padding: 24px 14px 60px; }
+
+    /* 헤더 */
+    .header-band { padding: 22px 18px 20px; border-radius: 10px 10px 0 0; }
+    .header-title { font-size: 18px; line-height: 1.3; }
+    .header-sub { font-size: 12.5px; }
+    .header-meta { gap: 6px; margin-top: 14px; }
+    .meta-pill { font-size: 11px; padding: 4px 10px; line-height: 1.5; }
+
+    /* 안내 박스 */
+    .notice-box { padding: 12px 14px; font-size: 12.5px; }
+
+    /* 카드 / 섹션 밴드 */
+    .card { padding: 20px 16px; }
+    .sec-band { flex-wrap: wrap; padding: 10px 14px; gap: 10px; }
+    .sec-band-title { font-size: 13px; }
+    .sec-band-label { font-size: 11px; }
+
+    /* 응답자 정보 입력 — 16px로 iOS 자동 확대 방지, 터치 패딩 확보 */
+    .id-input {
+      padding: 13px 14px;
+      font-size: 16px;
+      border-radius: 8px;
+      min-height: 48px;
+    }
+
+    /* 질문 블록 */
+    .q-block { margin-bottom: 20px; }
+    .q-label { font-size: 13.5px; line-height: 1.55; }
+    .q-hint { font-size: 12px; line-height: 1.5; }
+
+    /* 선택지 — col2 → 1열, 터치 영역 확대 */
+    .opt-grid.col2 { grid-template-columns: 1fr; }
+    .opt-grid { gap: 8px; }
+    .opt-item {
+      padding: 12px 14px;
+      min-height: 44px;
+      align-items: center;
+      border-radius: 8px;
+    }
+    .opt-item input[type="radio"],
+    .opt-item input[type="checkbox"] {
+      width: 18px; height: 18px; margin-top: 0;
+    }
+    .opt-text { font-size: 13.5px; line-height: 1.5; }
+    .opt-sub { font-size: 12px; margin-top: 3px; }
+
+    /* 자가진단 5단계 — 5열 유지 + 터치 높이 확보 */
+    .level-grid { grid-template-columns: repeat(5, 1fr); gap: 5px; }
+    .level-box {
+      padding: 12px 4px 10px;
+      min-height: 68px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 8px;
+    }
+    .level-box .lv-num { font-size: 16px; margin-bottom: 4px; }
+    .level-box .lv-label { font-size: 10.5px; line-height: 1.25; }
+
+    /* notice-inline — key 줄바꿈 허용, key/val 세로 정렬 */
+    .notice-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      padding: 10px 12px;
+    }
+    .notice-key {
+      white-space: normal;
+      min-width: 0;
+      font-size: 11px;
+      letter-spacing: 0.03em;
+    }
+    .notice-val { font-size: 12.5px; line-height: 1.6; }
+    .notice-caption { font-size: 11.5px; }
+
+    /* 텍스트 영역 + Q13 기타 입력 — iOS 확대 방지 */
+    .q-textarea {
+      font-size: 16px;
+      padding: 12px 13px;
+      min-height: 96px;
+      border-radius: 8px;
+    }
+    #q13_etc_text {
+      width: 100% !important;
+      margin-left: 0 !important;
+      margin-top: 6px !important;
+      padding: 8px 10px !important;
+      font-size: 16px !important;
+      border: 0.5px solid var(--gray-line) !important;
+      border-radius: 6px !important;
+      background: var(--white) !important;
+    }
+
+    /* 제출 카드 — 세로 정렬, 버튼 최소 48px */
+    .submit-card {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 22px 18px;
+      gap: 14px;
+    }
+    .submit-card > div:last-child {
+      display: flex;
+      gap: 8px;
+    }
+    .btn-submit, .btn-print {
+      flex: 1;
+      min-height: 48px;
+      padding: 14px 18px;
+      margin-left: 0;
+      font-size: 14px;
+    }
+
+    /* 푸터 */
+    .footer-bar { flex-direction: column; align-items: flex-start; padding: 14px 16px; }
+    .footer-copy { text-align: left; }
+
+    /* 에러 배너 */
+    #error-banner { padding: 12px 14px; font-size: 13px; top: 4px; }
+
+    /* 완료 카드 — 가운데 정렬 유지 + 패딩 축소 */
+    #completion-card { padding: 48px 20px; }
+    #completion-card .done-mark { font-size: 42px; margin-bottom: 14px; }
+    #completion-card .done-title { font-size: 17px; margin-bottom: 12px; }
+    #completion-card .done-body { font-size: 13px; line-height: 1.8; }
+  }
+
+  /* 초소형 단말 (360~380px) */
+  @media (max-width: 380px) {
+    .page-wrap { padding: 18px 10px 50px; }
+    .header-band { padding: 20px 16px 18px; }
+    .header-title { font-size: 17px; }
+    .meta-pill { font-size: 10.5px; padding: 3px 9px; }
+    .card { padding: 18px 14px; }
+    .level-box { min-height: 62px; padding: 10px 3px 8px; }
+    .level-box .lv-label { font-size: 10px; }
+    .opt-item { padding: 11px 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- HEADER -->
+  <div class="header-band">
+    <div class="header-eyebrow">충청남도건축사회 BIM·AI위원회 · 2026</div>
+    <div class="header-title">BIM(Revit) 실무교육 &amp; AI 실무활용 세미나<br>통합 수요조사</div>
+    <div class="header-sub">두 사업을 한 번에 조사합니다. 관심 있는 프로그램만 선택해 응답하셔도 됩니다.</div>
+    <div class="header-meta">
+      <span class="meta-pill">소요시간 약 7분</span>
+      <span class="meta-pill">총 5개 섹션 · 20문항</span>
+      <span class="meta-pill">응답 내용 집계 처리</span>
+      <span class="meta-pill" style="background:rgba(230,180,50,0.25);border-color:rgba(230,180,50,0.4);color:#ffe599;">📅 응답기간 4/30(목) ~ 5/8(금)</span>
+    </div>
+  </div>
+
+  <!-- PRIORITY NOTICE -->
+  <div class="notice-box" style="background:#fffbe6;border-left-color:#e6a817;color:#5a3e00;margin-bottom:0;">
+    <strong style="color:#b07800;">📋 수요조사 응답자 우선 안내</strong><br>
+    본 수요조사에 응답하신 분께는 교육 모집 공고 및 세부 안내를 <strong>우선적으로 개별 발송</strong>해 드립니다.<br>
+    응답 후 연락처를 남겨 주시면 공고 전 사전 안내 대상에 포함됩니다.<br>
+    <strong style="color:#c0392b;">⏰ 응답 마감 : 2026년 5월 8일(금) 자정</strong>
+  </div>
+  <div class="notice-gap"></div>
+  <!-- NOTICE: Revit -->
+  <div class="notice-box">
+    <strong>① BIM(Revit) 실무교육</strong> — 최대 10명 소수 정원 · <strong>선착순 마감</strong> · 8~10주 과정 · 수요일 오후 고정 · 오프라인 대면<br>
+    모집 기간 <strong>5월 13일(수) ~ 20일(수)</strong> · 교육 확정자 공지 <strong>5월 21일(목)</strong> · 교육 시작 <strong>6월 24일(수)</strong>
+  </div>
+  <div class="notice-gap"></div>
+  <!-- NOTICE: AI -->
+  <div class="notice-box viridian">
+    <strong>② AI 실무활용 세미나</strong> — 회원 전체 대상 · 오프라인 대면 · 소요 2~3시간/회 · <strong>회차별 30명 한정 · 선착순 마감</strong><br>
+    <strong>1회차 6월 10일(수) 오후</strong> — 법규검토 AI / 건축 이미지 생성 AI<br>
+    <strong>2회차 6월 17일(수) 오후</strong> — PPT 제작 AI / 공모전 활용 AI
+  </div>
+
+  <!-- 제출 오류 배너 -->
+  <div id="error-banner" role="alert">⚠ 미입력 항목이 있습니다. 확인 후 다시 제출해 주세요.</div>
+
+  <!-- 폼 영역 (제출 성공 시 숨김) -->
+  <div id="form-area">
+
+  <!-- ─────────────────────────────────────── -->
+  <!-- 응답자 신원 입력 (필수) -->
+  <!-- ─────────────────────────────────────── -->
+  <div class="sec-band" style="margin-top:24px;">
+    <div class="sec-band-dot slate" style="background:#8a9aab;"></div>
+    <div>
+      <div class="sec-band-label">응답 시작 전 필수 입력</div>
+      <div class="sec-band-title">응답자 정보</div>
+    </div>
+  </div>
+
+  <div class="card" style="border-top: 3px solid var(--slate);">
+    <div class="q-block">
+      <div class="notice-inline" style="margin-bottom:18px;">
+        <div class="notice-row">
+          <span class="notice-key" style="color:var(--slate);">참여 기록</span>
+          <span class="notice-val">참여 여부(이름·연락처)는 <strong>교육·세미나 안내 목적으로만</strong> 별도 관리됩니다.</span>
+        </div>
+        <div class="notice-row">
+          <span class="notice-key" style="color:var(--slate);">응답 내용</span>
+          <span class="notice-val">선택·기술 응답은 <strong>통계 집계로만 활용</strong>되며, 개인별 답변은 공개되지 않습니다.</span>
+        </div>
+        <div class="notice-row">
+          <span class="notice-key" style="color:var(--slate);">관리 원칙</span>
+          <span class="notice-val">수집된 정보는 위원회 교육 운영 외 목적으로 사용되지 않으며, 외부에 제공되지 않습니다.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">성함 <span class="req">*</span></div>
+      <input type="text" id="user_name" placeholder="홍길동" class="id-input">
+    </div>
+    <div class="q-block">
+      <div class="q-label">소속 사무소명 <span class="req">*</span></div>
+      <input type="text" id="user_office" placeholder="○○건축사사무소" class="id-input">
+    </div>
+    <div class="q-block">
+      <div class="q-label">사무소 소재 지역 <span class="req">*</span></div>
+      <input type="text" id="user_region" placeholder="예) 천안, 계룡, 아산, 공주, 홍성 등" class="id-input">
+    </div>
+    <div class="q-block" style="margin-bottom:0;">
+      <div class="q-label">연락처 또는 이메일 <span class="req">*</span></div>
+      <input type="text" id="user_contact" placeholder="010-0000-0000  /  example@email.com" class="id-input">
+    </div>
+  </div>
+    <div class="sec-band-dot slate" style="background:#8a9aab;"></div>
+    <div>
+      <div class="sec-band-label">SECTION 1 · 공통</div>
+      <div class="sec-band-title">기본 현황</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="q-block">
+      <div class="q-label">Q1. 건축사 등록 후 실무 경력을 선택해 주세요.<span class="req">*</span></div>
+      <div class="opt-grid col2">
+        <label class="opt-item"><input type="radio" name="q1" value="5미만"><span class="opt-text">5년 미만</span></label>
+        <label class="opt-item"><input type="radio" name="q1" value="5-10"><span class="opt-text">5년 이상 ~ 10년 미만</span></label>
+        <label class="opt-item"><input type="radio" name="q1" value="10-20"><span class="opt-text">10년 이상 ~ 20년 미만</span></label>
+        <label class="opt-item"><input type="radio" name="q1" value="20이상"><span class="opt-text">20년 이상</span></label>
+      </div>
+    </div>
+    <hr class="q-divider">
+    <div class="q-block">
+      <div class="q-label">Q2. 현재 소속 또는 운영 중인 사무소 규모는?<span class="req">*</span></div>
+      <div class="opt-grid col2">
+        <label class="opt-item"><input type="radio" name="q2" value="1인"><span class="opt-text">1인 사무소 (본인만)</span></label>
+        <label class="opt-item"><input type="radio" name="q2" value="2-5"><span class="opt-text">2~5인</span></label>
+        <label class="opt-item"><input type="radio" name="q2" value="6-15"><span class="opt-text">6~15인</span></label>
+        <label class="opt-item"><input type="radio" name="q2" value="16이상"><span class="opt-text">16인 이상</span></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────────── -->
+  <!-- SEC 2: Revit 활용 현황 및 교육 수요 -->
+  <!-- ─────────────────────────────────────── -->
+  <div class="sec-band">
+    <div class="sec-band-dot cobalt"></div>
+    <div>
+      <div class="sec-band-label">SECTION 2~3 · BIM(Revit) 실무교육</div>
+      <div class="sec-band-title">Revit 활용 현황 및 교육 수요</div>
+    </div>
+  </div>
+
+  <div class="card cobalt-card">
+    <div class="section-label">
+      <div class="section-num">2</div>
+      <div class="section-title">Revit 활용 현황 <span class="sec-badge cobalt">BIM 교육</span></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">Q3. Revit 사용 경험을 선택해 주세요.<span class="req">*</span></div>
+      <div class="opt-grid">
+        <label class="opt-item"><input type="radio" name="q3" value="없음"><span class="opt-text">전혀 사용한 적 없음</span></label>
+        <label class="opt-item"><input type="radio" name="q3" value="체험"><span class="opt-text">체험·교육 수강 경험 있음 (실무 미사용)</span></label>
+        <label class="opt-item"><input type="radio" name="q3" value="간헐"><span class="opt-text">실무에서 간헐적으로 사용 중</span></label>
+        <label class="opt-item"><input type="radio" name="q3" value="주력"><span class="opt-text">실무 주요 툴로 사용 중</span></label>
+      </div>
+    </div>
+    <hr class="q-divider">
+
+    <div class="q-block">
+      <div class="q-label">Q4. Revit 외 현재 사용 중인 BIM 또는 3D 소프트웨어가 있다면 선택해 주세요. <span style="font-weight:400;color:var(--gray-mid)">(복수선택가능)</span></div>
+      <div class="opt-grid col2">
+        <label class="opt-item"><input type="checkbox" name="q4" value="없음"><span class="opt-text">없음 (CAD 위주)</span></label>
+        <label class="opt-item"><input type="checkbox" name="q4" value="ArchiCAD"><span class="opt-text">ArchiCAD</span></label>
+        <label class="opt-item"><input type="checkbox" name="q4" value="SketchUp"><span class="opt-text">SketchUp</span></label>
+        <label class="opt-item"><input type="checkbox" name="q4" value="기타"><span class="opt-text">기타</span></label>
+      </div>
+    </div>
+    <hr class="q-divider">
+
+    <div class="q-block">
+      <div class="q-label">Q5. 교육 참여 시 Revit 라이선스 조달 방법을 선택해 주세요.<span class="req">*</span></div>
+      <div class="q-hint">충남건축사회 보유 라이선스는 5카피로 제한되어 있습니다. 선착순 5인에게 우선 배정되며, 이외 인원은 자력으로 라이선스를 준비하셔야 교육 이수가 가능합니다.</div>
+      <div class="opt-grid">
+        <label class="opt-item"><input type="radio" name="q5" value="자력">
+          <span class="opt-text"><strong>자력 조달 가능</strong>
+          <span class="opt-sub">직접 구독 또는 소속 사무소 보유 라이선스 활용</span></span></label>
+        <label class="opt-item"><input type="radio" name="q5" value="지원필요">
+          <span class="opt-text"><strong>위원회 지원 카피 필요</strong>
+          <span class="opt-sub">선착순 5인 배정 · 조기 마감 시 자력 조달 필요</span></span></label>
+        <label class="opt-item"><input type="radio" name="q5" value="미정">
+          <span class="opt-text"><strong>미정</strong>
+          <span class="opt-sub">지원 가능 여부 확인 후 결정</span></span></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEC 3: Revit 교육 수준 수요 -->
+  <div class="card cobalt-card">
+    <div class="section-label">
+      <div class="section-num">3</div>
+      <div class="section-title">교육 수준 수요 및 운영 안내 <span class="sec-badge cobalt">BIM 교육</span></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">Q6. 현재 본인의 Revit 실력을 자가 진단해 주세요.<span class="req">*</span></div>
+      <div class="q-hint">1 = 완전 처음 / 5 = 독립 실무 가능</div>
+      <div class="level-grid">
+        <label class="level-item"><input type="radio" name="q6" value="1">
+          <div class="level-box"><span class="lv-num">1</span><span class="lv-label">전혀<br>모름</span></div></label>
+        <label class="level-item"><input type="radio" name="q6" value="2">
+          <div class="level-box"><span class="lv-num">2</span><span class="lv-label">기초<br>화면조작</span></div></label>
+        <label class="level-item"><input type="radio" name="q6" value="3">
+          <div class="level-box"><span class="lv-num">3</span><span class="lv-label">기본<br>모델링</span></div></label>
+        <label class="level-item"><input type="radio" name="q6" value="4">
+          <div class="level-box"><span class="lv-num">4</span><span class="lv-label">도면·<br>패밀리</span></div></label>
+        <label class="level-item"><input type="radio" name="q6" value="5">
+          <div class="level-box"><span class="lv-num">5</span><span class="lv-label">협업·<br>실무독립</span></div></label>
+      </div>
+    </div>
+    <hr class="q-divider">
+
+    <div class="q-block">
+      <div class="q-label">Q7. 수강하고 싶은 교육 수준은?<span class="req">*</span></div>
+      <div class="opt-grid">
+        <label class="opt-item"><input type="radio" name="q7" value="완전초급">
+          <span class="opt-text"><strong>완전 초급</strong><span class="opt-sub">설치·인터페이스 파악 → 기본 벽·바닥·지붕 모델링 시작</span></span></label>
+        <label class="opt-item"><input type="radio" name="q7" value="초급">
+          <span class="opt-text"><strong>초급</strong><span class="opt-sub">기본 모델링 완성 → 평면·입면·단면 도면 추출 → 시트 구성</span></span></label>
+        <label class="opt-item"><input type="radio" name="q7" value="중급">
+          <span class="opt-text"><strong>중급</strong><span class="opt-sub">패밀리 제작·편집 → 일람표 → 협업(워크셋·링크) → 도서 완성</span></span></label>
+        <label class="opt-item"><input type="radio" name="q7" value="혼합">
+          <span class="opt-text"><strong>레벨 혼합 (기초 ~ 중급 커버)</strong><span class="opt-sub">초급 기반 다지기 후 중급 실무 과제까지 순차 진행</span></span></label>
+      </div>
+    </div>
+    <hr class="q-divider">
+
+    <div class="q-block">
+      <div class="q-label">Q8. 교육에서 가장 다루어 주셨으면 하는 주제를 선택해 주세요. <span style="font-weight:400;color:var(--gray-mid)">(복수선택가능)</span></div>
+      <div class="opt-grid col2">
+        <label class="opt-item"><input type="checkbox" name="q8" value="모델링기초"><span class="opt-text">기초 모델링 (벽·슬래브·계단)</span></label>
+        <label class="opt-item"><input type="checkbox" name="q8" value="도면추출"><span class="opt-text">도면 추출 및 시트 구성</span></label>
+        <label class="opt-item"><input type="checkbox" name="q8" value="패밀리"><span class="opt-text">패밀리 제작 및 편집</span></label>
+        <label class="opt-item"><input type="checkbox" name="q8" value="일람표"><span class="opt-text">일람표·물량 산출</span></label>
+        <label class="opt-item"><input type="checkbox" name="q8" value="협업"><span class="opt-text">협업 환경 (워크셋·링크)</span></label>
+        <label class="opt-item"><input type="checkbox" name="q8" value="렌더링"><span class="opt-text">시각화·렌더링</span></label>
+        <label class="opt-item"><input type="checkbox" name="q8" value="IFC"><span class="opt-text">IFC 변환 및 납품 기준</span></label>
+        <label class="opt-item"><input type="checkbox" name="q8" value="AI연동"><span class="opt-text">AI 도구 연동 활용</span></label>
+      </div>
+    </div>
+    <hr class="q-divider">
+
+    <!-- Revit 운영 공지 -->
+    <div class="q-block">
+      <div class="q-label" style="margin-bottom:8px;">교육 운영 안내</div>
+      <div class="notice-inline">
+        <div class="notice-row"><span class="notice-key">진행 방식</span>
+          <span class="notice-val"><strong>오프라인 대면</strong> 전용 · 온라인·녹화 수업 없음 · 결석 시 보강 불가</span></div>
+        <div class="notice-row"><span class="notice-key">요일·시간</span>
+          <span class="notice-val">매주 <strong>수요일 오후</strong> 고정 운영 (상황에 따라 변경 가능)</span></div>
+        <div class="notice-row"><span class="notice-key">회당 시간</span>
+          <span class="notice-val"><strong>3~4시간</strong> 예정</span></div>
+        <div class="notice-row"><span class="notice-key">총 기간</span>
+          <span class="notice-val"><strong>8~10주</strong> 과정 · 시작 <strong>6월 24일(수)</strong></span></div>
+      </div>
+    </div>
+    <hr class="q-divider">
+
+    <div class="q-block">
+      <div class="q-label">Q9. 위 일정(수요일 오후, 회당 3~4시간)으로 참여 가능하신가요?<span class="req">*</span></div>
+      <div class="opt-grid">
+        <label class="opt-item"><input type="radio" name="q9" value="가능">
+          <span class="opt-text"><strong>참여 가능</strong> — 해당 일정에 지속적으로 출석할 수 있다</span></label>
+        <label class="opt-item"><input type="radio" name="q9" value="부분">
+          <span class="opt-text"><strong>부분적으로 가능</strong> — 간헐적 결석 가능성이 있다</span></label>
+        <label class="opt-item"><input type="radio" name="q9" value="불가">
+          <span class="opt-text"><strong>참여 어려움</strong> — 해당 요일·시간대에 고정 일정이 있다</span></label>
+      </div>
+    </div>
+    <hr class="q-divider">
+
+    <div class="q-block">
+      <div class="q-label">Q10. 이번 Revit 교육 수강 의향은?<span class="req">*</span></div>
+      <div class="opt-grid">
+        <label class="opt-item"><input type="radio" name="q10" value="확실">
+          <span class="opt-text"><strong>적극 수강 의향</strong> — 일정 확정 시 즉시 신청하겠다</span></label>
+        <label class="opt-item"><input type="radio" name="q10" value="검토">
+          <span class="opt-text"><strong>수강 검토 중</strong> — 세부 사항 확인 후 결정하겠다</span></label>
+        <label class="opt-item"><input type="radio" name="q10" value="관망">
+          <span class="opt-text"><strong>이번 기수는 관망</strong> — 다음 기수를 고려하겠다</span></label>
+        <label class="opt-item"><input type="radio" name="q10" value="불필요">
+          <span class="opt-text">현재 교육 필요성을 느끼지 않는다</span></label>
+      </div>
+    </div>
+    <hr class="q-divider">
+
+    <!-- 교육비·보증금 안내 -->
+    <div class="q-block">
+      <div class="q-label" style="margin-bottom:8px;">교육비 및 보증금 안내</div>
+      <div class="notice-inline deposit">
+        <div class="notice-row"><span class="notice-key">초기 납부</span>
+          <span class="notice-val">수강 확정 시 <strong>교육비 100,000원 + 교육 보증금 200,000원 = 총 300,000원</strong></span></div>
+        <div class="notice-row"><span class="notice-key">이수 조건</span>
+          <span class="notice-val">아래 3가지 조건 <strong>모두 충족</strong> 시 보증금 환급<br>
+          <span style="display:block;margin-top:6px;padding-left:4px;line-height:1.9;font-size:12.5px;">
+            ① <strong>출석률 80% 이상</strong> (8주 기준 최소 6회 / 10주 기준 최소 8회)<br>
+            ② <strong>회차별 피드백 설문 제출</strong> (매 회차 종료 후 필수)<br>
+            ③ <strong>과제 제출</strong> (지정 과제 기한 내 제출)
+          </span></span></div>
+        <div class="notice-row"><span class="notice-key">이수 후 환급</span>
+          <span class="notice-val">보증금 <strong>200,000원 전액</strong> 반환 · 실질 교육비 <strong>100,000원</strong></span></div>
+        <div class="notice-row"><span class="notice-key">미이수 시</span>
+          <span class="notice-val">무단 결석 누적·중도 포기 시 보증금 일부 또는 전부 미반환 (세부 기준 공고 시 안내)</span></div>
+      </div>
+      <div class="notice-caption">※ 소수 정원(최대 10명) 운영으로, 중도 포기는 다른 수강 희망자의 기회를 소멸시킵니다.</div>
+    </div>
+
+    <div class="q-block" style="margin-top:14px;">
+      <div class="q-label">Q11. 위 교육비·보증금 조건을 확인하셨습니까?<span class="req">*</span></div>
+      <div class="opt-grid">
+        <label class="opt-item"><input type="radio" name="q11" value="동의">
+          <span class="opt-text"><strong>이해하고 납부 가능</strong> — 초기 30만원 납부 (이수 후 20만원 환급) 조건으로 신청 의향</span></label>
+        <label class="opt-item"><input type="radio" name="q11" value="검토">
+          <span class="opt-text"><strong>검토 중</strong> — 세부 조건 추가 확인 후 결정하겠다</span></label>
+        <label class="opt-item"><input type="radio" name="q11" value="부담">
+          <span class="opt-text">납부 조건에 부담이 있다</span></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────────── -->
+  <!-- SEC 4: AI 실무활용 세미나 -->
+  <!-- ─────────────────────────────────────── -->
+  <div class="sec-band">
+    <div class="sec-band-dot viridian"></div>
+    <div>
+      <div class="sec-band-label">SECTION 4 · AI 실무활용 세미나</div>
+      <div class="sec-band-title">AI 세미나 수요조사</div>
+    </div>
+  </div>
+
+  <div class="card viridian-card">
+    <div class="section-label">
+      <div class="section-num viridian">4</div>
+      <div class="section-title">AI 실무활용 세미나 수요 <span class="sec-badge viridian">AI 세미나</span></div>
+    </div>
+
+    <!-- AI 세미나 개요 공지 -->
+    <div class="q-block">
+      <div class="q-label" style="margin-bottom:8px;">세미나 개요 안내</div>
+      <div class="notice-inline viridian">
+        <div class="notice-row"><span class="notice-key">목적</span>
+          <span class="notice-val">AI를 써야 한다고는 알지만 실무 진입이 어려운 분들을 위한 <strong>실무 진입 지원 세미나</strong>입니다. 건축 실무에 바로 적용 가능한 AI 도구를 직접 체험하고, 자력으로 활용하는 첫걸음을 내딛는 것이 목표입니다.</span></div>
+        <div class="notice-row"><span class="notice-key">1회차</span>
+          <span class="notice-val"><strong>6월 10일(화) 오후</strong> · 2~3시간 · 법규검토 AI + 건축 이미지 생성 AI</span></div>
+        <div class="notice-row"><span class="notice-key">2회차</span>
+          <span class="notice-val"><strong>6월 17일(화) 오후</strong> · 2~3시간 · PPT 제작 AI + 공모전 활용 AI</span></div>
+        <div class="notice-row"><span class="notice-key">대상</span>
+          <span class="notice-val">충남건축사회 회원 전체 · <strong>회차별 30명 한정 · 선착순 마감</strong> (3층 대회의실)</span></div>
+      </div>
+    </div>
+    <hr class="q-divider">
+
+    <div class="q-block">
+      <div class="q-label">Q12. 현재 업무에서 AI 도구를 활용하고 있나요?<span class="req vir">*</span></div>
+      <div class="opt-grid col2">
+        <label class="opt-item v"><input type="radio" name="q12" value="적극활용"><span class="opt-text">적극 활용 중 (주 업무에 통합)</span></label>
+        <label class="opt-item v"><input type="radio" name="q12" value="간헐활용"><span class="opt-text">간헐적 사용 (ChatGPT 등 단순 검색용)</span></label>
+        <label class="opt-item v"><input type="radio" name="q12" value="관심있음"><span class="opt-text">아직 미사용이나 관심 있음</span></label>
+        <label class="opt-item v"><input type="radio" name="q12" value="관심없음"><span class="opt-text">AI 도구 활용 필요성을 못 느낌</span></label>
+      </div>
+    </div>
+    <hr class="q-divider">
+
+    <div class="q-block">
+      <div class="q-label">Q13. 이번 AI 세미나에서 가장 관심 있는 카테고리는? <span style="font-weight:400;color:var(--gray-mid)">(복수선택가능)</span></div>
+      <div class="opt-grid col2">
+        <label class="opt-item v"><input type="checkbox" name="q13" value="법규검토">
+          <span class="opt-text"><strong>법규검토 AI</strong><span class="opt-sub">건축법규 질의·검토 자동화</span></span></label>
+        <label class="opt-item v"><input type="checkbox" name="q13" value="이미지생성">
+          <span class="opt-text"><strong>건축 이미지 생성 AI</strong><span class="opt-sub">렌더링·투시도 이미지 생성</span></span></label>
+        <label class="opt-item v"><input type="checkbox" name="q13" value="PPT">
+          <span class="opt-text"><strong>PPT 제작 AI</strong><span class="opt-sub">제안서·발표자료 자동 생성</span></span></label>
+        <label class="opt-item v"><input type="checkbox" name="q13" value="공모전">
+          <span class="opt-text"><strong>공모전 활용 AI</strong><span class="opt-sub">기획·개념 발전·자료 구성</span></span></label>
+        <label class="opt-item v"><input type="checkbox" name="q13" value="모두">
+          <span class="opt-text">전 카테고리 관심 있음</span></label>
+        <label class="opt-item v"><input type="checkbox" name="q13" value="기타" id="q13_etc">
+          <span class="opt-text">기타 —
+            <input type="text" id="q13_etc_text" placeholder="직접 입력해 주세요"
+              onclick="document.getElementById('q13_etc').checked=true;"
+              style="border:none;border-bottom:1px solid var(--viridian-mid);background:transparent;outline:none;font-size:13px;font-family:'Noto Sans KR',sans-serif;color:var(--ink-black);width:200px;margin-left:4px;padding:1px 4px;">
+          </span></label>
+      </div>
+    </div>
+    <hr class="q-divider">
+
+    <div class="q-block">
+      <div class="q-label">Q14. 세미나에서 가장 기대하는 것은?<span class="req vir">*</span></div>
+      <div class="opt-grid">
+        <label class="opt-item v"><input type="radio" name="q14" value="진입">
+          <span class="opt-text"><strong>AI 실무 진입</strong> — 어떤 도구를 어떻게 시작할지 알고 싶다</span></label>
+        <label class="opt-item v"><input type="radio" name="q14" value="실습">
+          <span class="opt-text"><strong>직접 실습</strong> — 당일 내 PC로 직접 써보고 싶다</span></label>
+        <label class="opt-item v"><input type="radio" name="q14" value="사례">
+          <span class="opt-text"><strong>실무 사례</strong> — 다른 건축사가 AI를 어떻게 쓰는지 보고 싶다</span></label>
+        <label class="opt-item v"><input type="radio" name="q14" value="네트워크">
+          <span class="opt-text"><strong>네트워킹</strong> — AI 관심 있는 동료 건축사를 만나고 싶다</span></label>
+      </div>
+    </div>
+    <hr class="q-divider">
+
+    <div class="q-block">
+      <div class="q-label">Q15. 참여 희망 회차를 선택해 주세요.<span class="req vir">*</span></div>
+      <div class="q-hint">회차별 별도 접수됩니다. 두 회차 모두 참여 시 각각 신청·납부합니다.</div>
+      <div class="opt-grid">
+        <label class="opt-item v"><input type="radio" name="q15" value="1회차">
+          <span class="opt-text"><strong>1회차만 참여</strong>
+          <span class="opt-sub">6월 10일(수) 오후 · 법규검토 AI + 건축 이미지 생성 AI</span></span></label>
+        <label class="opt-item v"><input type="radio" name="q15" value="2회차">
+          <span class="opt-text"><strong>2회차만 참여</strong>
+          <span class="opt-sub">6월 17일(수) 오후 · PPT 제작 AI + 공모전 활용 AI</span></span></label>
+        <label class="opt-item v"><input type="radio" name="q15" value="둘다">
+          <span class="opt-text"><strong>두 회차 모두 참여</strong>
+          <span class="opt-sub">1회차(6/10) + 2회차(6/17) 각각 별도 접수 · 보증금 각 30,000원씩 납부</span></span></label>
+        <label class="opt-item v"><input type="radio" name="q15" value="미정">
+          <span class="opt-text">아직 미정 · 공지 후 결정하겠다</span></label>
+      </div>
+    </div>
+    <hr class="q-divider">
+
+    <!-- AI 세미나 참가비 안내 -->
+    <div class="q-block">
+      <div class="q-label" style="margin-bottom:8px;">노쇼 방지 보증금 안내</div>
+      <div class="notice-inline deposit">
+        <div class="notice-row"><span class="notice-key">접수 단위</span>
+          <span class="notice-val"><strong>회차별 별도 접수</strong>입니다. 두 회차 모두 참여 시 각각 신청·납부합니다.</span></div>
+        <div class="notice-row"><span class="notice-key">납부 금액</span>
+          <span class="notice-val">노쇼 방지 보증금 <strong>30,000원</strong> (참석 완료 시 전액 환급 · 별도 참가비 없음)</span></div>
+        <div class="notice-row"><span class="notice-key">참석 후 환급</span>
+          <span class="notice-val">세미나 당일 정상 참석 시 보증금 <strong>30,000원 전액 환급</strong></span></div>
+        <div class="notice-row"><span class="notice-key">노쇼 시</span>
+          <span class="notice-val">사전 취소 없이 불참 시 보증금 미반환</span></div>
+      </div>
+      <div class="notice-caption">※ 본 세미나는 별도 참가비 없이 운영되며, 보증금은 자리 확보 및 노쇼 방지 목적입니다.</div>
+    </div>
+
+    <div class="q-block" style="margin-top:14px;">
+      <div class="q-label">Q16. 위 보증금 조건을 확인하셨으며, 참여 의향이 있으신가요?<span class="req vir">*</span></div>
+      <div class="opt-grid">
+        <label class="opt-item v"><input type="radio" name="q16" value="동의">
+          <span class="opt-text"><strong>이해하고 참여 의향 있음</strong> — 보증금 30,000원 납부 조건으로 신청할 의향 (참석 후 전액 환급)</span></label>
+        <label class="opt-item v"><input type="radio" name="q16" value="검토">
+          <span class="opt-text"><strong>검토 중</strong> — 일정·세부 사항 확인 후 결정</span></label>
+        <label class="opt-item v"><input type="radio" name="q16" value="부담">
+          <span class="opt-text">보증금 납부 조건에 부담이 있다</span></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────────── -->
+  <!-- SEC 5: 위원회 인사이트 + 연락처 (공통) -->
+  <!-- ─────────────────────────────────────── -->
+  <div class="sec-band">
+    <div class="sec-band-dot slate" style="background:#8a9aab;"></div>
+    <div>
+      <div class="sec-band-label">SECTION 5 · 공통</div>
+      <div class="sec-band-title">위원회 인사이트 및 연락처</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-label">
+      <div class="section-num slate">5</div>
+      <div class="section-title">위원회 인사이트 <span class="sec-badge slate">위원회 자료</span></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-label">Q17. 사무소에서 BIM 도입·확장이 어려운 가장 큰 이유는? <span style="font-weight:400;color:var(--gray-mid)">(복수선택가능)</span></div>
+      <div class="opt-grid col2">
+        <label class="opt-item"><input type="checkbox" name="q17" value="비용"><span class="opt-text">소프트웨어·하드웨어 비용 부담</span></label>
+        <label class="opt-item"><input type="checkbox" name="q17" value="학습곡선"><span class="opt-text">학습 곡선이 너무 가파름</span></label>
+        <label class="opt-item"><input type="checkbox" name="q17" value="시간부족"><span class="opt-text">실무 병행 시 시간 부족</span></label>
+        <label class="opt-item"><input type="checkbox" name="q17" value="발주미요구"><span class="opt-text">발주처·인허가청이 BIM 미요구</span></label>
+        <label class="opt-item"><input type="checkbox" name="q17" value="호환성"><span class="opt-text">기존 CAD 워크플로우와 호환 어려움</span></label>
+        <label class="opt-item"><input type="checkbox" name="q17" value="인력부족"><span class="opt-text">전담 인력 없음</span></label>
+        <label class="opt-item"><input type="checkbox" name="q17" value="정보부족"><span class="opt-text">어디서 시작할지 모름</span></label>
+        <label class="opt-item"><input type="checkbox" name="q17" value="해당없음"><span class="opt-text">해당 없음 (이미 BIM 사용 중)</span></label>
+      </div>
+    </div>
+    <hr class="q-divider">
+
+    <div class="q-block">
+      <div class="q-label">Q18. 향후 BIM·AI위원회가 역점을 두어야 할 활동은? <span style="font-weight:400;color:var(--gray-mid)">(복수선택가능)</span></div>
+      <div class="opt-grid col2">
+        <label class="opt-item"><input type="checkbox" name="q18" value="실무교육"><span class="opt-text">실무형 BIM 교육 정례화</span></label>
+        <label class="opt-item"><input type="checkbox" name="q18" value="AI세미나"><span class="opt-text">AI 활용 세미나 정례화</span></label>
+        <label class="opt-item"><input type="checkbox" name="q18" value="정책대응"><span class="opt-text">BIM 의무화 정책 대응·가이드</span></label>
+        <label class="opt-item"><input type="checkbox" name="q18" value="네트워킹"><span class="opt-text">BIM 실무자 네트워킹·사례 공유</span></label>
+        <label class="opt-item"><input type="checkbox" name="q18" value="표준화"><span class="opt-text">충남 BIM 납품 기준 표준화</span></label>
+        <label class="opt-item"><input type="checkbox" name="q18" value="소규모지원"><span class="opt-text">소규모 사무소 BIM 도입 지원</span></label>
+      </div>
+    </div>
+    <hr class="q-divider">
+
+    <div class="q-block">
+      <div class="q-label">Q19. 교육·세미나 또는 위원회 활동에 바라시는 점을 자유롭게 적어 주세요.</div>
+      <textarea class="q-textarea" name="q19" placeholder="내용, 진행 방식, 강사 요건, 지원 사항, AI 세미나 추가 주제 요청 등 무엇이든 환영합니다."></textarea>
+    </div>
+    <hr class="q-divider">
+
+  </div>
+
+  <!-- SUBMIT -->
+  <div class="submit-card">
+    <div class="submit-msg">
+      <strong>응답해 주셔서 감사합니다.</strong><br>
+      수요조사 결과는 BIM(Revit) 교육 및 AI 세미나 기획에 반영됩니다.<br>
+      모집 공고 및 확정자 발표는 <strong>5월 21일(목)</strong>에 일괄 안내됩니다.
+    </div>
+    <div>
+      <button id="btn-submit-main" type="button" class="btn-submit">제출하기</button>
+      <button class="btn-print" onclick="window.print()">인쇄</button>
+    </div>
+  </div>
+
+  </div><!-- /#form-area -->
+
+  <!-- 완료 카드 (제출 성공 시 표시) -->
+  <div id="completion-card" role="status" aria-live="polite">
+    <div class="done-mark">✓</div>
+    <div class="done-title">응답이 접수되었습니다.</div>
+    <div class="done-body">
+      5월 21일(목) 모집 공고 시 우선 안내해 드리겠습니다.<br>
+      충남건축사회 BIM·AI위원회
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-bar">
+    <div class="footer-id">DocID: SRV-EDU-2026-01 · v2.0 · 2026-04 · Internal/Partner</div>
+    <div class="footer-copy">충청남도건축사회 BIM·AI위원회<br>© 2026 ARCHIVIA. 재배포 금지.</div>
+  </div>
+
+</div>
+
+<script>
+  const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxeMhzpv8n6ModD8MvwL6YHED5-w71Xy7NAyG39RCVvFPcwPCK4Mm_MWVIqF0tjsVcT/exec';
+
+  const REQUIRED_TEXT  = ['user_name', 'user_office', 'user_region', 'user_contact'];
+  const RADIO_FIELDS   = ['q1','q2','q3','q5','q6','q7','q9','q10','q11','q12','q14','q15','q16'];
+  const CHECKBOX_FIELDS = ['q4','q8','q13','q17','q18'];
+  const REQUIRED_RADIO = RADIO_FIELDS.slice();
+
+  const HEADER_MAP = {
+    user_name: '성함', user_office: '사무소명', user_region: '지역', user_contact: '연락처',
+    q1:'Q1_경력', q2:'Q2_사무소규모', q3:'Q3_Revit경험', q4:'Q4_병행툴',
+    q5:'Q5_라이선스', q6:'Q6_자가진단', q7:'Q7_희망수준', q8:'Q8_관심주제',
+    q9:'Q9_일정가능', q10:'Q10_수강의향', q11:'Q11_교육비동의', q12:'Q12_AI활용',
+    q13:'Q13_AI카테고리', q14:'Q14_세미나기대', q15:'Q15_참여회차',
+    q16:'Q16_보증금동의', q17:'Q17_BIM장벽', q18:'Q18_위원회역점', q19:'Q19_자유의견'
+  };
+
+  /* 옵션 선택 시각 효과 + 에러 해제 */
+  document.querySelectorAll('.opt-item').forEach(item => {
+    const inp = item.querySelector('input');
+    if (!inp) return;
+    inp.addEventListener('change', () => {
+      if (inp.type === 'radio') {
+        document.querySelectorAll(`input[name="${inp.name}"]`).forEach(r => {
+          r.closest('.opt-item').classList.remove('selected');
+        });
+      }
+      if (inp.checked) item.classList.add('selected');
+      else item.classList.remove('selected');
+      const block = inp.closest('.q-block');
+      if (block) block.classList.remove('field-error');
+    });
+  });
+
+  /* 텍스트 입력 시 에러 해제 */
+  document.querySelectorAll('.id-input, .q-textarea').forEach(el => {
+    el.addEventListener('input', () => el.classList.remove('field-error'));
+  });
+
+  function clearErrors() {
+    document.querySelectorAll('.field-error').forEach(el => el.classList.remove('field-error'));
+    document.getElementById('error-banner').style.display = 'none';
+  }
+
+  function validate() {
+    clearErrors();
+    let firstError = null;
+
+    REQUIRED_TEXT.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (!el.value.trim()) {
+        el.classList.add('field-error');
+        if (!firstError) firstError = el;
+      }
+    });
+
+    REQUIRED_RADIO.forEach(name => {
+      const checked = document.querySelector(`input[name="${name}"]:checked`);
+      if (!checked) {
+        const first = document.querySelector(`input[name="${name}"]`);
+        const block = first ? first.closest('.q-block') : null;
+        if (block) block.classList.add('field-error');
+        if (!firstError) firstError = block || first;
+      }
+    });
+
+    if (firstError) {
+      const banner = document.getElementById('error-banner');
+      banner.style.display = 'block';
+      firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return false;
+    }
+    return true;
+  }
+
+  function collectPayload() {
+    const payload = {};
+
+    REQUIRED_TEXT.forEach(id => {
+      const el = document.getElementById(id);
+      payload[HEADER_MAP[id]] = el ? el.value.trim() : '';
+    });
+
+    RADIO_FIELDS.forEach(name => {
+      const el = document.querySelector(`input[name="${name}"]:checked`);
+      payload[HEADER_MAP[name]] = el ? el.value : '';
+    });
+
+    /* Q4, Q8, Q17, Q18: 체크박스 → 쉼표 join */
+    ['q4','q8','q17','q18'].forEach(name => {
+      const arr = Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(el => el.value);
+      payload[HEADER_MAP[name]] = arr.join(', ');
+    });
+
+    /* Q13: 체크박스 + 기타 텍스트 병합 */
+    const q13Checked = Array.from(document.querySelectorAll('input[name="q13"]:checked')).map(el => el.value);
+    const etcInput = document.getElementById('q13_etc_text');
+    const etcText = etcInput ? etcInput.value.trim() : '';
+    const q13Final = q13Checked.map(v => (v === '기타' && etcText) ? `기타: ${etcText}` : v);
+    payload[HEADER_MAP['q13']] = q13Final.join(', ');
+
+    /* Q19: 자유의견 */
+    const ta = document.querySelector('textarea[name="q19"]');
+    payload[HEADER_MAP['q19']] = ta ? ta.value.trim() : '';
+
+    return payload;
+  }
+
+  async function submitForm() {
+    if (!validate()) return;
+
+    const btn = document.getElementById('btn-submit-main');
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span>제출 중...';
+
+    try {
+      const payload = collectPayload();
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if (data.result === 'success') {
+        document.getElementById('form-area').style.display = 'none';
+        document.getElementById('completion-card').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        throw new Error(data.message || 'unknown');
+      }
+    } catch (err) {
+      alert('제출 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.');
+      btn.disabled = false;
+      btn.textContent = originalText;
+    }
+  }
+
+  document.getElementById('btn-submit-main').addEventListener('click', submitForm);
+</script>
+</body>
+</html>
