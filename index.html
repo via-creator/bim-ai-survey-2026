@@ -594,11 +594,17 @@
       <div class="q-label">사무소 소재 지역 <span class="req">*</span></div>
       <input type="text" id="user_region" placeholder="예) 천안, 계룡, 아산, 공주, 홍성 등" class="id-input">
     </div>
+    <div class="q-block">
+      <div class="q-label">연락처(휴대폰번호) <span class="req">*</span></div>
+      <input type="tel" id="user_contact" placeholder="010-0000-0000" class="id-input">
+    </div>
     <div class="q-block" style="margin-bottom:0;">
-      <div class="q-label">연락처 또는 이메일 <span class="req">*</span></div>
-      <input type="text" id="user_contact" placeholder="010-0000-0000  /  example@email.com" class="id-input">
+      <div class="q-label">이메일 주소 <span class="req">*</span></div>
+      <input type="email" id="user_email" placeholder="example@email.com" class="id-input">
     </div>
   </div>
+
+  <div class="sec-band">
     <div class="sec-band-dot slate" style="background:#8a9aab;"></div>
     <div>
       <div class="sec-band-label">SECTION 1 · 공통</div>
@@ -1036,13 +1042,13 @@
 <script>
   const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxeMhzpv8n6ModD8MvwL6YHED5-w71Xy7NAyG39RCVvFPcwPCK4Mm_MWVIqF0tjsVcT/exec';
 
-  const REQUIRED_TEXT  = ['user_name', 'user_office', 'user_region', 'user_contact'];
+  const REQUIRED_TEXT  = ['user_name', 'user_office', 'user_region', 'user_contact', 'user_email'];
   const RADIO_FIELDS   = ['q1','q2','q3','q5','q6','q7','q9','q10','q11','q12','q14','q15','q16'];
   const CHECKBOX_FIELDS = ['q4','q8','q13','q17','q18'];
   const REQUIRED_RADIO = RADIO_FIELDS.slice();
 
   const HEADER_MAP = {
-    user_name: '성함', user_office: '사무소명', user_region: '지역', user_contact: '연락처',
+    user_name: '성함', user_office: '사무소명', user_region: '지역', user_contact: '연락처', user_email: '이메일',
     q1:'Q1_경력', q2:'Q2_사무소규모', q3:'Q3_Revit경험', q4:'Q4_병행툴',
     q5:'Q5_라이선스', q6:'Q6_자가진단', q7:'Q7_희망수준', q8:'Q8_관심주제',
     q9:'Q9_일정가능', q10:'Q10_수강의향', q11:'Q11_교육비동의', q12:'Q12_AI활용',
@@ -1160,6 +1166,8 @@
       const data = await res.json();
       if (data.result === 'success') {
         document.getElementById('form-area').style.display = 'none';
+        document.querySelectorAll('.submit-card').forEach(el => { el.style.display = 'none'; });
+        document.getElementById('error-banner').style.display = 'none';
         document.getElementById('completion-card').style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
